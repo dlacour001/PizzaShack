@@ -1,0 +1,65 @@
+<html>
+		<title>CSCI 440 project page</title>
+<head>        
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #cccc00;
+    -webkit-font-smoothing: antialiased;
+    background: #0a1d68;
+}
+</style>
+</head>
+    
+	<body>
+    
+  <!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="http://pizzashack.x10host.com/" class="w3-bar-item w3-button">Home</a>
+    <a href="http://pizzashack.x10host.com/about" class="w3-bar-item w3-button">About</a>
+    <a href="http://pizzashack.x10host.com/Menu" class="w3-bar-item w3-button">Menu</a>
+    <a href="http://pizzashack.x10host.com/Deals" class="w3-bar-item w3-button">Deals</a>
+    <a href="http://pizzashack.x10host.com/Checkout" class="w3-bar-item w3-button">Checkout</a>
+    <a href="http://pizzashack.x10host.com/DeliveryTrack" class="w3-bar-item w3-button">Delivery Tracker</a>
+    <a href="http://pizzashack.x10host.com/Help" class="w3-bar-item w3-button">Help</a>
+    <a href="http://pizzashack.x10host.com/SignIn" class="w3-bar-item w3-button">Sign In</a>
+    <a href="http://pizzashack.x10host.com/CreateAccount" class="w3-bar-item w3-button">Create Account</a>
+
+  </div>  
+</div>
+
+    		
+		<center><h1><br><h1 id ="customer"></h1>
+		
+		
+		<br>
+		<h2>Recommendations for you!</h2>
+		<br>
+		<a href="http://pizzashack.x10host.com/Checkout">
+		    <img src="/home/pizzash3/public_html/TestPizza.jpg" alt="Checkout test">
+		</a>
+		<br>
+		<h2>Deals of the day!</h2>
+		<a href="http://pizzashack.x10host.com/Deals">
+		    <img src="Pizza 2.jpg" alt="Deals test" width "50" height "50" >
+		</a></center>
+		<script>
+			var custID;
+			var custName;			
+			custName=localStorage.getItem("name");	
+			if(custName!=null)		
+				document.getElementById("customer").innerHTML = "Hello "+ custName+", Welcome to the Shack!";
+			else
+				document.getElementById("customer").innerHTML = "Hello, Welcome to the Shack!";
+			
+		</script>
+		
+	</body>
+</html>
