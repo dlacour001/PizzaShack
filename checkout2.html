@@ -1,0 +1,305 @@
+<html>
+		<title>CSCI 440 project page</title>
+        
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #cccc00;
+    -webkit-font-smoothing: antialiased;
+    background: #0a1d68;
+}
+</style>
+    
+	<body>
+    
+  <!-- Navbar (sit on top) -->
+	<div class="w3-top w3-hide-small">
+	  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+	<a href="http://pizzashack.x10host.com/Home2" class="w3-bar-item w3-button">Home</a>
+	    <a href="http://pizzashack.x10host.com/about2" class="w3-bar-item w3-button">About</a>
+	    <a href="http://pizzashack.x10host.com/Menu2" class="w3-bar-item w3-button">Menu</a>
+	    <a href="http://pizzashack.x10host.com/Checkout2" class="w3-bar-item w3-button">Checkout</a>
+	    <a href="http://pizzashack.x10host.com/DeliveryTrack2" class="w3-bar-item w3-button">Delivery Tracker</a>
+	    <a href="http://pizzashack.x10host.com/Help2" class="w3-bar-item w3-button">Help</a>
+	    <a href="http://pizzashack.x10host.com/Signout" class="w3-bar-item w3-button">Sign Out</a>
+   
+  </div>
+</div>
+
+
+        <center><br><br><h2 id="items"></h2>
+        <br>
+        <h3>You have:<h3>
+        <h3 id="product1"><h3>
+        <button id ="1" onclick="remove1()">Remove</button>
+        <h3 id="product2"><h3>
+        <button id ="2" onclick="remove2()">Remove</button>
+        <h3 id="product3"><h3>
+        <button id = "3"onclick="remove3()">Remove</button>
+        <h3 id="product4"><h3>
+        <button id = "4" onclick="remove4()">Remove</button>
+        <h3 id="product5"><h3>
+        <button id = "5" onclick="remove5()">Remove</button>
+        <h3 id="product6"><h3>
+        <button id = "6" onclick="remove6()">Remove</button>
+        <h3 id="product7"><h3>
+        <button id = "7" onclick="remove7()">Remove</button>
+      	<br>
+      	<h4 id="total"><h4>
+        <p>Delivery or Carryout?</p>
+        <form action="checkout.php" method= "post" >
+            <input type="radio" name = "orderOption" value= "delivery" checked >Delivery
+            <br>
+            <input type="radio" name = "orderOption" value = "carryout" >Carryout
+            <input type = "hidden" name ="email" value="" id="email">
+            <input type = "hidden" name ="totalCost" value=0 id="totalCost">
+            <br><br>
+            <input type="submit">
+        </form></center>     
+        <script>
+        	var numItems=parseInt(sessionStorage.getItem("itemsInCart"));
+        	var prod1 = parseInt(sessionStorage.getItem("product1"));
+        	var price1 = parseFloat(sessionStorage.getItem("price1"));
+        	var prod2 = parseInt(sessionStorage.getItem("product2"));
+        	var price2 = parseFloat(sessionStorage.getItem("price2"));
+        	var prod3= parseInt(sessionStorage.getItem("product3"));
+        	var price3 = parseFloat(sessionStorage.getItem("price3"));
+        	var prod4 = parseInt(sessionStorage.getItem("product4"));
+        	var price4 = parseFloat(sessionStorage.getItem("price4"));
+        	var prod5 = parseInt(sessionStorage.getItem("product5"));
+        	var price5 = parseFloat(sessionStorage.getItem("price5"));
+        	var prod6 = parseInt(sessionStorage.getItem("product6"));
+        	var price6 = parseFloat(sessionStorage.getItem("price6"));
+        	var prod7 = parseInt(sessionStorage.getItem("product7"));
+        	var price7 = parseFloat(sessionStorage.getItem("price7"));
+        	var email= sessionStorage.getItem("userEmail");
+        	
+        	var itemCost=0;
+        	var totalCost=0;
+        	var check;
+        	var numRemove;
+        	document.getElementById("email").value= email;
+        	
+        	document.getElementById("1").style.visibility = "hidden";
+        	document.getElementById("2").style.visibility = "hidden";
+        	document.getElementById("3").style.visibility = "hidden";
+        	document.getElementById("4").style.visibility = "hidden";
+        	document.getElementById("5").style.visibility = "hidden";
+        	document.getElementById("6").style.visibility = "hidden";
+        	document.getElementById("7").style.visibility = "hidden";
+        	if(numItems==1)
+        		document.getElementById("items").innerHTML = "You have "+ numItems+" item in your cart!"
+        	else
+        		document.getElementById("items").innerHTML = "You have "+ numItems+" items in your cart!"
+        	if(prod1>0)
+        	{
+        		itemCost=price1*prod1;
+        		document.getElementById("product1").innerHTML=prod1+" Bottles of soda Cost: $"+itemCost;
+        		document.getElementById("1").style.visibility = "visible";
+        		totalCost=totalCost+itemCost;
+        	}
+        	if(prod2>0)
+        	{
+        		itemCost=price2*prod2;
+        		document.getElementById("product2").innerHTML=prod2+" Pepperoni Pizzas Cost:$"+itemCost;
+        		document.getElementById("2").style.visibility = "visible";
+        		totalCost=totalCost+itemCost;
+        	}
+        	if(prod3>0)
+        	{
+        		itemCost=price3*prod3;
+        		document.getElementById("product3").innerHTML=prod3+" Cheese Pizzas Cost:$"+itemCost;
+        		document.getElementById("3").style.visibility = "visible";
+        		totalCost=totalCost+itemCost;
+        	}
+        	if(prod4>0)
+        	{
+        		itemCost=price4*prod4;
+        		document.getElementById("product4").innerHTML=prod4+" Supreme Pizzas Cost:$"+itemCost;
+        		document.getElementById("4").style.visibility = "visible";
+        		totalCost=totalCost+itemCost;
+        	}
+        	if(prod5>0)
+        	{
+        		itemCost=price5*prod5;
+        		document.getElementById("product5").innerHTML=prod5+" Orders of BBQ Wings Cost:$"+itemCost;
+        		document.getElementById("5").style.visibility = "visible";
+        		totalCost=totalCost+itemCost;
+        	}
+        	if(prod6>0)
+        	{
+        		itemCost=price6*prod6;
+        		document.getElementById("product6").innerHTML=prod6+" Orders of Lemon-Pepper Wings Cost:$"+itemCost;
+        		document.getElementById("6").style.visibility = "visible";
+        		totalCost=totalCost+itemCost;
+        	}
+        	if(prod7>0)
+        	{
+        		itemCost=price7*prod7;
+        		document.getElementById("product7").innerHTML=prod7+" Orders of Buffalo Wings Cost:$"+itemCost;
+        		document.getElementById("7").style.visibility = "visible";
+        		totalCost=totalCost+itemCost;
+        	}
+        	function remove1()
+        	{
+        		var check= prompt("Are you sure you want to remove this item?(y/n)");
+        		if(check=="y")
+        		{
+        			if(prod1>1)
+        			{
+        				numRemove= parseInt(prompt("How many would you like to remove? (Please input a number)"));
+        				prod1=prod1-numRemove;
+        				if(prod1<0)
+        				{
+        					prod1=0;
+        				}
+        						
+        			}
+        			else
+        				prod1=0;
+        			sessionStorage.setItem("product1", prod1);
+        			location.reload();        			
+        		}
+        	}
+        	function remove2()
+        	{
+        		var check= prompt("Are you sure you want to remove this item?(y/n)");
+        		if(check=="y")
+        		{
+        			if(prod2>1)
+        			{
+        				numRemove= parseInt(prompt("How many would you like to remove? (Please input a number)"));
+        				prod2=prod2-numRemove;
+        				if(prod2<0)
+        				{
+        					prod2=0;
+        					
+        				}
+        							
+        			}
+        			else
+        				prod2=0;
+        			sessionStorage.setItem("product2", prod2);
+        			location.reload();        			
+        		}
+        	}
+        	function remove3()
+        	{
+        		var check= prompt("Are you sure you want to remove this item?(y/n)");
+        		if(check=="y")
+        		{
+        			if(prod3>1)
+        			{
+        				numRemove= parseInt(prompt("How many would you like to remove? (Please input a number)"));
+        				prod3=prod3-numRemove;
+        				if(prod3<0)
+        				{
+        					prod3=0;
+        				}
+        						
+        			}
+        			else
+        				prod3=0;
+        			sessionStorage.setItem("product3", prod3);
+        			location.reload();
+        			
+        		}
+        	}
+        	function remove4()
+        	{
+        		var check= prompt("Are you sure you want to remove this item?(y/n)");
+        		if(check=="y")
+        		{
+        			if(prod4>1)
+        			{
+        				numRemove= parseInt(prompt("How many would you like to remove? (Please input a number)"));
+        				prod4=prod4-numRemove;
+        				if(prod4<0)
+        				{
+        					prod4=0;
+        				}
+        						
+        			}
+        			else
+        				prod4=0;
+        			sessionStorage.setItem("product4", prod4);
+        			location.reload();	
+        		}
+        	}
+        	function remove5()
+        	
+        	{
+        		var check= prompt("Are you sure you want to remove this item?(y/n)");
+        		if(check=="y")
+        		{
+        			if(prod5>1)
+        			{
+        				numRemove= parseInt(prompt("How many would you like to remove? (Please input a number)"));
+        				prod5=prod5-numRemove;
+        				if(prod5<0)
+        				{
+        					prod5=0;
+        					
+        				}
+        							
+        			}
+        			else
+        				prod5=0;
+        			sessionStorage.setItem("product5", prod5);
+        			location.reload();
+        		}
+        	}
+        	function remove6()
+        	{
+        		var check= prompt("Are you sure you want to remove this item?(y/n)");
+        		if(check=="y")
+        		{
+        			if(prod6>1)
+        			{
+        				numRemove= parseInt(prompt("How many would you like to remove? (Please input a number)"));
+        				prod6=prod6-numRemove;
+        				if(prod6<0)
+        				{
+        					prod6=0;
+        				}
+        							
+        			}
+        			else
+        				prod6=0;
+        			sessionStorage.setItem("product6", prod6);
+        			location.reload();
+        		}
+        	}
+        	function remove7()
+        	{
+        		var check= prompt("Are you sure you want to remove this item?(y/n)");
+        		if(check=="y")
+        		{
+        			if(prod5>1)
+        			{
+        				numRemove= parseInt(prompt("How many would you like to remove? (Please input a number)"));
+        				prod5=prod5-numRemove;
+        				if(prod5<0)
+        				{
+        					prod5=0;
+        				}
+        							
+        			}
+        			else
+        				prod7=0;
+        			sessionStorage.setItem("product7", prod5);
+        			location.reload();
+        		}
+        	}
+        	
+        	document.getElementById("total").innerHTML="			Total Cost: $"+totalCost;
+        	document.getElementById("totalCost").value= totalCost;
+        </script>
+    </body>
+</html>
