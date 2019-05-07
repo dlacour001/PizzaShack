@@ -1,0 +1,158 @@
+<html>
+		<title>CSCI 440 project page</title>
+        
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #cccc00;
+    -webkit-font-smoothing: antialiased;
+    background: #0a1d68;
+}
+</style>
+    
+	<body>
+    
+  <!-- Navbar (sit on top) -->
+	<div class="w3-top w3-hide-small">
+	  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+	<a href="http://pizzashack.x10host.com/Home2" class="w3-bar-item w3-button">Home</a>
+	    <a href="http://pizzashack.x10host.com/about2" class="w3-bar-item w3-button">About</a>
+	    <a href="http://pizzashack.x10host.com/Menu2" class="w3-bar-item w3-button">Menu</a>
+	    <a href="http://pizzashack.x10host.com/Checkout2" class="w3-bar-item w3-button">Checkout</a>
+	    <a href="http://pizzashack.x10host.com/DeliveryTrack2" class="w3-bar-item w3-button">Delivery Tracker</a>
+	    <a href="http://pizzashack.x10host.com/Help2" class="w3-bar-item w3-button">Help</a>
+	    <a href="http://pizzashack.x10host.com/Signout" class="w3-bar-item w3-button">Sign Out</a>
+
+  </div>
+</div>
+
+        
+        <center><h2><br>Pizza!</h2>
+        <h3>Supreme</h3>
+        <img id="req" src="supremePizza.jpg" alt="Supreme" style="width:500px;height:300px;"><br>
+        Our supreme pizza is packed with all the flavors of the shack. <br>
+        Pepperoni? Done. Cheese? You bet. <br>
+        Everything you have ever wanted from a pizza?<br>
+        Well thats right here. $13<br>
+	<form action= "CreateOrder.php" method = "post">
+		<input type= "radio" name = "size" value= "Medium" checked>Medium<br>
+		<input type= "radio" name = "size" value= "Large">Large<br>
+		<input type="number" name="quantity" min="1" max="10" step="1" value="1"><br>
+		<input type = "hidden" id = "productID" name = "productID" value = '4'>
+		<input type = "hidden" id= "orderID" name= "orderID" >
+		
+		<input type= "submit" value= "Add to cart!">
+	</form>
+        
+        <h3>Pepperoni</h3>
+        <img id="req" src="pepperoni.png" alt="Supreme" style="width:500px;height:300px;"><br>
+        A pepperoni pizza unlike any other youve had before.<br> 
+        Delicious. Molten cheese. Perfectly cooked Pepperoni. <br>
+        The classic pizza has never been better. $10<br>
+        <form action= "CreateOrder.php" method = "post">
+		<input type= "radio" name = "size" value= "Medium" checked>Medium<br>
+		<input type= "radio" name = "size" value= "Large">Large<br>
+		<input type="number" name="quantity" min="1" max="10" step="1" value="1"><br>
+		<input type = "hidden" id = "productID" name = "productID" value = '2'>
+		<input type = "hidden" id= "orderID2" name= "orderID">
+	
+		<input type= "submit" value= "Add to cart!">
+	</form>
+        
+        <h3>Cheese</h3>
+        <img id="req" src="cheese.jpg" alt="Supreme" style="width:500px;height:300px;"><br>
+        Sometimes you dont ever need anything more than the<br>
+        basics. Our delicious blend of melty cheese made hot <br>
+        and fresh for every order. $10<br>
+        <form action= "CreateOrder.php" method = "post">
+		<input type= "radio" name = "size" value= "Medium" checked>Medium<br>
+		<input type= "radio" name = "size" value= "Large">Large<br>
+		<input type="number" name="quantity" min="1" max="10" step="1" value="1"><br>
+		<input type = "hidden" id = "productID" name = "productID" value = '3'>
+		<input type = "hidden" id= "orderID3" name= "orderID" >
+		
+		<input type= "submit" value= "Add to cart!">
+	</form>
+        
+        <h2>Wings!</h2>
+        
+        <h3>Barbeque</h3>
+        <img id="req" src="bbqwings.jpg" alt="Supreme" style="width:500px;height:300px;"><br>
+        Eight dollars for the absolute best barbeque wings<br>
+        that you will ever be able to find made all the <br>
+        better by our 8 for $8 deal.<br>
+        <form action= "CreateOrder.php" method = "post">
+		<input type= "hidden" name = "size" value= "Medium" ><br>
+		
+		<input type="number" name="quantity" min="1" max="10" step="1" value="1"><br>
+		<input type = "hidden" id = "productID" name = "productID" value = 5>
+		<input type = "hidden" id= "orderID4" name= "orderID">
+		
+		<input type= "submit" value= "Add to cart!">
+	</form>
+        
+        <h3>Lemon Pepper</h3>
+        <img id="req" src="LemonPepperWings.jpg" alt="Supreme" style="width:500px;height:300px;"><br>
+        Sometimes this is what we all want. When it is less<br>
+        sauce covered wings you want, then these zesty wings<br>
+        are exactly what you crave and what a deal?! 8 for $8. <br>
+        <form action= "CreateOrder.php" method = "post">
+		<input type= "hidden" name = "size" value= "Medium" >		
+		<input type="number" name="quantity" min="1" max="10" step="1" value="1"><br>
+		<input type = "hidden" id = "productID" name = "productID" value = 6>
+		<input type = "hidden" id= "orderID5" name= "orderID" >
+		
+		<input type= "submit" value= "Add to cart!">
+	</form>
+        
+        <h3>Buffalo</h3>
+        <img id="req" src="BuffaloWings.jpg" alt="Supreme" style="width:500px;height:300px;"><br>
+        At the end of the day only one fact stands out. You <br>
+        cant beat the classics. Our delicious brand of buffalo <br>
+        sauce coats these wings to perfection. This is a great<br>
+        deal as well at 8 for $8.<br>
+        <form action= "CreateOrder.php" method = "post">
+		<input type= "hidden" name = "size" value= "Medium" checked>
+		<input type="number" name="quantity" min="1" max="10" step="1" value="1"><br>
+		<input type = "hidden" id = "productID" name = "productID" value =7>
+		<input type = "hidden" id= "orderID6" name= "orderID" >
+		
+		<input type= "submit" value= "Add to cart!">
+	</form>
+
+        <h2>Drinks</h2>
+        <img id="req" src="soda.jpg" alt="Supreme" style="width:500px;height:300px;"><br>
+        You would be wrong to think that all drinks are the same.<br>
+        While other places might offer you a nice drink, we only offer<br>
+        the freshest most delicious fountain drinks that you can find. <br>
+        For $2 for the litter bottles this is the best deal around.<br>
+        <form action= "CreateOrder.php" method = "post">
+		<input type= "hidden" name = "size" value= "Medium" ><br>		
+		<input type="number" name="quantity" min="1" max="10" step="1" value="1"><br>
+		<input type = "hidden" id = "productID" name = "productID" value = 1>
+		<input type = "hidden" id= "orderID7" name= "orderID" >
+		
+		<input type= "submit" value= "Add to cart!">
+	</form>
+        <br></center>
+    </body>
+    <script>
+					
+			var orderID=sessionStorage.getItem("orderID");
+			document.getElementById("orderID").value=orderID;
+			document.getElementById("orderID2").value=orderID;		
+			document.getElementById("orderID3").value=orderID;
+			document.getElementById("orderID4").value=orderID;
+			document.getElementById("orderID5").value=orderID;
+			document.getElementById("orderID6").value=orderID;
+			document.getElementById("orderID7").value=orderID;
+			
+	</script>
+</html>
