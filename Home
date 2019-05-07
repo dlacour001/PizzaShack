@@ -1,0 +1,79 @@
+<html>
+		<title>CSCI 440 project page</title>
+<head>        
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #cccc00;
+    -webkit-font-smoothing: antialiased;
+    background: #0a1d68;
+}
+</style>
+</head>
+    
+	<body>
+    
+  <!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="http://pizzashack.x10host.com/Home" class="w3-bar-item w3-button">Home</a>
+    <a href="http://pizzashack.x10host.com/about" class="w3-bar-item w3-button">About</a>
+    <a href="http://pizzashack.x10host.com/Menu" class="w3-bar-item w3-button">Menu</a>
+    <a href="http://pizzashack.x10host.com/Checkout" class="w3-bar-item w3-button">Checkout</a>
+    <a href="http://pizzashack.x10host.com/DeliveryTrack" class="w3-bar-item w3-button">Delivery Tracker</a>
+    <a href="http://pizzashack.x10host.com/Help" class="w3-bar-item w3-button">Help</a>
+    <a href="http://pizzashack.x10host.com/SignIn" class="w3-bar-item w3-button">Sign In</a>
+    <a href="http://pizzashack.x10host.com/CreateAccount" class="w3-bar-item w3-button">Create Account</a>
+
+  </div>  
+</div>
+
+    		
+		<center><br><br><h1 id ="customer"></h1>
+		
+		
+		<br>
+		<h2>Recommended for you!</h2>
+		<br>
+		<img id="req" src="" alt="Checkout test" style="width:500px;height:300px;">
+		<br>
+		<button onclick = "addToCart()">Add to cart</button>
+		
+		<br>
+		<h2>Deal of the Day!</h2>
+		<img id="deal" src="" alt="Checkout test" style="width:500px;height:300px;">
+		<br>
+		<button onclick = "addToCart()">Add to cart</button>
+		<script>
+			var custID;
+			var custName;
+			var reqImage=sessionStorage.getItem("reqImageName");
+			document.getElementById("req").src = reqImage;	
+			var dealImage=sessionStorage.getItem("dealImageName");
+			document.getElementById("deal").src = dealImage;			
+			custName=sessionStorage.getItem("name");	
+			if(custName!= "0")
+			{		
+				document.getElementById("customer").innerHTML = "Hello "+ custName+", Welcome to the Shack!";
+			}
+			else
+			{
+				document.getElementById("customer").innerHTML = "Hello, Welcome to the Shack!";				
+				
+			}
+			
+			function addToCart()
+			{
+				window.alert("Please sign in to order.");
+			}
+			
+		</script>
+		
+	</body>
+</html>
