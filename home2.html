@@ -1,0 +1,95 @@
+<html>
+		<title>CSCI 440 project page</title>
+<head>        
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #cccc00;
+    -webkit-font-smoothing: antialiased;
+    background: #0a1d68;
+}
+</style>
+</head>
+    
+	<body>
+    
+  <!-- Navbar (sit on top) -->
+	<div class="w3-top w3-hide-small">
+	  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+	<a href="http://pizzashack.x10host.com/Home2" class="w3-bar-item w3-button">Home</a>
+	    <a href="http://pizzashack.x10host.com/about2" class="w3-bar-item w3-button">About</a>
+	    <a href="http://pizzashack.x10host.com/Menu2" class="w3-bar-item w3-button">Menu</a>
+	    <a href="http://pizzashack.x10host.com/Checkout2" class="w3-bar-item w3-button">Checkout</a>
+	    <a href="http://pizzashack.x10host.com/DeliveryTrack2" class="w3-bar-item w3-button">Delivery Tracker</a>
+	    <a href="http://pizzashack.x10host.com/Help2" class="w3-bar-item w3-button">Help</a>
+	    <a href="http://pizzashack.x10host.com/Signout" class="w3-bar-item w3-button">Sign Out</a>
+  </div>  
+</div>
+
+    		
+		<center><br><br><h1 id ="customer"></h1>
+		
+		
+		<br>
+		<h2>Recommendations for you!</h2>
+		<br>
+		<img id="req" src="" alt="Checkout test" style="width:500px;height:300px;">
+		<form action= "CreateOrder.php" method = "post">
+			<input type= "radio" name = "size" value= "Medium" checked>Medium<br>
+			<input type= "radio" name = "size" value= "Large">Large<br>
+			<input type="number" name="quantity" min="1" max="10" step="1" value="1"><br>
+			<input type = "hidden" id = "productID" value = "" name = "productID">
+			<input type = "hidden" id= "orderID" value= "" name = "orderID">
+			
+			<input type= "submit" value= "Add to cart!">
+			
+		</form>
+		<br>
+		<h2>Deal of the day!</h2>
+		<img id="deal" src="" alt="Checkout test" style="width:500px;height:300px;">
+		<form action= "CreateOrder.php" method = "post">
+			<input type= "radio" name = "size" value= "Medium" checked>Medium<br>
+			<input type= "radio" name = "size" value= "Large">Large<br>
+			<input type="number" name="quantity" min="1" max="10" step="1" value="1"><br>
+			<input type = "hidden" id = "dproductID" value = "" name="productID">
+			<input type = "hidden" id= "orderID2" value ="" name = "orderID">
+			
+			<input type= "submit" value= "Add to cart!">
+			
+		</form>
+		
+		<script>
+			var custID=sessionStorage.getItem("id");
+			var custName=sessionStorage.getItem("name");
+			var reqImage=sessionStorage.getItem("reqImageName");
+			var reqProductID=sessionStorage.getItem("reqProductID");
+			var dealImage=sessionStorage.getItem("dealImageName");
+			var dealProductID=sessionStorage.getItem("dealProductID");
+			var orderID=sessionStorage.getItem("orderID");
+			document.getElementById("orderID").value=orderID;
+			document.getElementById("req").src = reqImage;	
+			document.getElementById("productID").value= reqProductID;
+			document.getElementById("deal").src = dealImage;	
+			document.getElementById("dproductID").value=dealProductID;			
+			document.getElementById("orderID2").value=orderID;
+			if(custName!= "0")
+			{		
+				document.getElementById("customer").innerHTML = "Hello "+ custName+", Welcome to the Shack!";
+				
+			}
+			else
+			{
+				document.getElementById("customer").innerHTML = "Hello, Welcome to the Shack!";				
+				
+			}
+			
+		</script>
+		
+	</body>
+</html>
